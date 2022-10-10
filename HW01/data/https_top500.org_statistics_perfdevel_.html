@@ -1,0 +1,2560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Performance Development | TOP500</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/top500.css" rel="stylesheet">
+    <link href="/static/css/menu.css" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <link rel="icon" type="image/png" href="/static/images/Top.png">
+
+    
+
+    
+
+
+    
+        <style>
+            html, body {
+                height: 80%;
+            }
+        </style>
+    
+
+    <script type="text/javascript">var switchTo5x = true;</script>
+    <script src="https://www.google.com/jsapi?key=ABQIAAAAjBc6iR40aJtAwcj9HMZBYhRJaxAAofxHq0gEaifsfToGnpixdBQJC_bTjQIXv67MMRk0TIy-pv04GQ"
+            type="text/javascript"></script>
+    <script type='text/javascript' src='https://partner.googleadservices.com/gampad/google_service.js'></script>
+
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+
+    <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function () {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+                '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+
+    <script type='text/javascript'>
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/2924242/leaderboard', [728, 90], 'div-gpt-ad-1416441378536-15').addService(googletag.pubads());
+            googletag.defineSlot('/2924242/mobile_leaderboard', [320, 50], 'div-gpt-ad-1620390358895-0').addService(googletag.pubads());
+            googletag.defineSlot('/2924242/2013_square_popup_1', [250, 250], 'div-gpt-ad-1416441378536-5').addService(googletag.pubads());
+            googletag.defineSlot('/2924242/2013_square_popup_2', [250, 250], 'div-gpt-ad-1453380928566-0').addService(googletag.pubads());
+            googletag.defineSlot('/2924242/2013_square_popup_3', [250, 250], 'div-gpt-ad-1509611081669-0').addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        // Der Button wird mit JavaScript erzeugt und vor dem Ende des body eingebunden.
+        var back_to_top_button = ['<img href="#top" class="back-to-top" src="/static//images/Top.png" width="100">'].join("");
+        $("body").append(back_to_top_button)
+
+        // Der Button wird ausgeblendet
+        $(".back-to-top").hide();
+
+        // Funktion für das Scroll-Verhalten
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 500) { // Wenn 100 Pixel gescrolled wurde
+                    $('.back-to-top').fadeIn();
+                } else {
+                    $('.back-to-top').fadeOut();
+                }
+            });
+
+            $('.back-to-top').click(function () { // Klick auf den Button
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+
+    });
+    </script>
+
+    <script type="text/javascript">
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+    
+    
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 left header">
+                    
+                    
+                    <a href="/">
+                    <img src="/static//images/Top500_logo.png" width="150" style="margin-left: 10px;">
+                    </a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-9">
+                <div class="leaderboard">
+                    
+                        <!-- leadearboard -->
+                        <div id='div-gpt-ad-1416441378536-15' style='width:728px; height:90px;'>
+                            <script type='text/javascript'>
+                                googletag.cmd.push(function () {
+                                    googletag.display('div-gpt-ad-1416441378536-15');
+                                });
+                            </script>
+                        </div>
+                    
+                </div>
+                <div class="leaderboard_mobile">
+                    <div id='div-gpt-ad-1620390358895-0' style='height:50px; width:320px; margin-bottom: 20px'>
+                        <script>
+                            googletag.cmd.push(function () {
+                                googletag.display('div-gpt-ad-1620390358895-0');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-expand-md navbar-light" role="navigation">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                    
+
+<ul class="navbar-nav mr-auto">
+
+    <li class="
+               "
+         id="2">
+        <a href="/"
+           >
+           Home
+           
+        </a>
+        
+    </li>
+
+    <li class="dropdown
+               "
+         id="11">
+        <a href="/lists/"
+            class="dropdown-toggle" >
+           Lists
+           
+               <b class="caret"></b>
+           
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-lists">
+
+    <li class="dropdown-submenu
+               "
+        id="13">
+        <a href="/lists/top500/"
+           class=" dropdown-toggle">
+           TOP500
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-top500">
+
+    <li class="
+               "
+        id="326">
+        <a href="/lists/top500/2022/06/"
+           class="">
+           June 2022
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="320">
+        <a href="/lists/top500/2021/11/"
+           class="">
+           November 2021
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="313">
+        <a href="/lists/top500/2021/06/"
+           class="">
+           June 2021
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="307">
+        <a href="/lists/top500/2020/11/"
+           class="">
+           November 2020
+        </a>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="292">
+        <a href="/lists/top500/2020/06/"
+           class=" dropdown-toggle">
+           June 2020
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2020">
+
+    <li class="
+               "
+        id="296">
+        <a href="/news/japan-captures-top500-crown-arm-powered-supercomputer/"
+           class="">
+           Press Release
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="
+               "
+        id="14">
+        <a href="/lists/top500/2019/11/"
+           class="">
+           November 2019
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="146">
+        <a href="/lists/top500/2019/06/"
+           class="">
+           June 2019
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="147">
+        <a href="/lists/top500/2018/11/"
+           class="">
+           November 2018
+        </a>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="151">
+        <a href="/lists/top500/2018/06/"
+           class=" dropdown-toggle">
+           June 2018
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2018">
+
+    <li class="
+               "
+        id="274">
+        <a href="/lists/top500/2018/06/highlights/"
+           class="">
+           Highlights - June 2018
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="149">
+        <a href="/lists/top500/2017/11/"
+           class=" dropdown-toggle">
+           November 2017
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2017">
+
+    <li class="
+               "
+        id="286">
+        <a href="/lists/top500/2017/11/highlights/"
+           class="">
+           Highlights - November 2017
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="152">
+        <a href="/lists/top500/2017/06/"
+           class=" dropdown-toggle">
+           June 2017
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2017">
+
+    <li class="
+               "
+        id="285">
+        <a href="/lists/top500/2017/06/highlights/"
+           class="">
+           Highlights - June 2017
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="150">
+        <a href="/lists/top500/2016/11/"
+           class=" dropdown-toggle">
+           November 2016
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2016">
+
+    <li class="
+               "
+        id="284">
+        <a href="/lists/top500/2016/11/highlights/"
+           class="">
+           Highlights - November 2016
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="148">
+        <a href="/lists/top500/2016/06/"
+           class=" dropdown-toggle">
+           June 2016
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2016">
+
+    <li class="
+               "
+        id="283">
+        <a href="/lists/top500/2016/06/highlights/"
+           class="">
+           Highlights - June 2016
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="153">
+        <a href="/lists/top500/2015/11/"
+           class=" dropdown-toggle">
+           Novermber 2015
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-novermber-2015">
+
+    <li class="
+               "
+        id="280">
+        <a href="/lists/top500/2015/11/highlights/"
+           class="">
+           Highlights - November 2015
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="143">
+        <a href="/lists/top500/2015/06/"
+           class=" dropdown-toggle">
+           June 2015
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2015">
+
+    <li class="
+               "
+        id="276">
+        <a href="/lists/top500/2015/06/highlights/"
+           class="">
+           Highlights - June 2015
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="160">
+        <a href="/lists/top500/2014/11/"
+           class=" dropdown-toggle">
+           November 2014
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2014">
+
+    <li class="
+               "
+        id="266">
+        <a href="/lists/top500/2014/11/highlights/"
+           class="">
+           Highlights - November 2014
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="171">
+        <a href="/lists/top500/2014/06/"
+           class=" dropdown-toggle">
+           June 2014
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2014">
+
+    <li class="
+               "
+        id="261">
+        <a href="/lists/top500/2014/06/highlights/"
+           class="">
+           Highlights - June 2014
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="178">
+        <a href="/lists/top500/2013/11/"
+           class=" dropdown-toggle">
+           November 2013
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2013">
+
+    <li class="
+               "
+        id="282">
+        <a href="/lists/top500/2013/11/highlights/"
+           class="">
+           Highlights - November 2013
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="183">
+        <a href="/lists/top500/2013/06/"
+           class=" dropdown-toggle">
+           June 2013
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2013">
+
+    <li class="
+               "
+        id="281">
+        <a href="/lists/top500/2013/06/highlights/"
+           class="">
+           Highlights - June 2013
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="186">
+        <a href="/lists/top500/2012/11/"
+           class=" dropdown-toggle">
+           November 2012
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2012">
+
+    <li class="
+               "
+        id="279">
+        <a href="/lists/top500/2012/11/highlights/"
+           class="">
+           Highlights - November 2012
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="189">
+        <a href="/lists/top500/2012/06/"
+           class=" dropdown-toggle">
+           June 2012
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2012">
+
+    <li class="
+               "
+        id="278">
+        <a href="/lists/top500/2012/06/highlights/"
+           class="">
+           Highlights - June 2012
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="190">
+        <a href="/lists/top500/2011/11/"
+           class=" dropdown-toggle">
+           November 2011
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2011">
+
+    <li class="
+               "
+        id="277">
+        <a href="/lists/top500/2011/11/highlights/"
+           class="">
+           Highlights - November 2011
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="192">
+        <a href="/lists/top500/2011/06/"
+           class=" dropdown-toggle">
+           June 2011
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2011">
+
+    <li class="
+               "
+        id="275">
+        <a href="/lists/top500/2011/06/highlights/"
+           class="">
+           Highlights - June 2011
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="193">
+        <a href="/lists/top500/2010/11/"
+           class=" dropdown-toggle">
+           November 2010
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2010">
+
+    <li class="
+               "
+        id="267">
+        <a href="/lists/top500/2010/11/highlights/"
+           class="">
+           Highlights - November 2010
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="194">
+        <a href="/lists/top500/2010/06/"
+           class=" dropdown-toggle">
+           June 2010
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2010">
+
+    <li class="
+               "
+        id="264">
+        <a href="/lists/top500/2010/06/highlights/"
+           class="">
+           Highlights - June 2010
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="196">
+        <a href="/lists/top500/2009/11/"
+           class=" dropdown-toggle">
+           November 2009
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2009">
+
+    <li class="
+               "
+        id="263">
+        <a href="/lists/top500/2009/11/highlights/"
+           class="">
+           Highlights - November 2009
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="197">
+        <a href="/lists/top500/2009/06/"
+           class=" dropdown-toggle">
+           June 2009
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2009">
+
+    <li class="
+               "
+        id="262">
+        <a href="/lists/top500/2009/06/highlights/"
+           class="">
+           Highlights - June 2009
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="203">
+        <a href="/lists/top500/2008/11/"
+           class=" dropdown-toggle">
+           November 2008
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2008">
+
+    <li class="
+               "
+        id="260">
+        <a href="/lists/top500/2008/11/highlights/"
+           class="">
+           Highlights - November 2008
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="204">
+        <a href="/lists/top500/2008/06/"
+           class=" dropdown-toggle">
+           June 2008
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2008">
+
+    <li class="
+               "
+        id="259">
+        <a href="/lists/top500/2008/06/highlights/"
+           class="">
+           Highlights - June 2008
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="205">
+        <a href="/lists/top500/2007/11/"
+           class=" dropdown-toggle">
+           November 2007
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2007">
+
+    <li class="
+               "
+        id="273">
+        <a href="/lists/top500/2007/11/highlights/"
+           class="">
+           Highlights - November 2007
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="206">
+        <a href="/lists/top500/2007/06/"
+           class=" dropdown-toggle">
+           June 2007
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2007">
+
+    <li class="
+               "
+        id="269">
+        <a href="/lists/top500/2007/06/highlights/"
+           class="">
+           Highlights - June 2007
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="154">
+        <a href="/lists/top500/2006/11/"
+           class=" dropdown-toggle">
+           November 2006
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2006">
+
+    <li class="
+               "
+        id="268">
+        <a href="/lists/top500/2006/11/highlights/"
+           class="">
+           Highlights - November 2006
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="155">
+        <a href="/lists/top500/2006/06/"
+           class=" dropdown-toggle">
+           June 2006
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2006">
+
+    <li class="
+               "
+        id="272">
+        <a href="/lists/top500/2006/06/highlights/"
+           class="">
+           Highlights - June 2006
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="156">
+        <a href="/lists/top500/2005/11/"
+           class=" dropdown-toggle">
+           November 2005
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2005">
+
+    <li class="
+               "
+        id="265">
+        <a href="/lists/top500/2005/11/highlights/"
+           class="">
+           Highlights - November 2005
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="157">
+        <a href="/lists/top500/2005/06/"
+           class=" dropdown-toggle">
+           June 2005
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-june-2005">
+
+    <li class="
+               "
+        id="271">
+        <a href="/lists/top500/2005/06/highlights/"
+           class="">
+           Highlights - June 2005
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="158">
+        <a href="/lists/top500/2004/11/"
+           class=" dropdown-toggle">
+           November 2004
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-november-2004">
+
+    <li class="
+               "
+        id="270">
+        <a href="/lists/top500/2004/11/highlights/"
+           class="">
+           Highlights - November 2004
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="
+               "
+        id="159">
+        <a href="/lists/top500/2004/06/"
+           class="">
+           June 2004
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="161">
+        <a href="/lists/top500/2003/11/"
+           class="">
+           November 2003
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="162">
+        <a href="/lists/top500/2003/06/"
+           class="">
+           June 2003
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="163">
+        <a href="/lists/top500/2002/11/"
+           class="">
+           November 2002
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="165">
+        <a href="/lists/top500/2002/06/"
+           class="">
+           June 2002
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="164">
+        <a href="/lists/top500/2001/11/"
+           class="">
+           November 2001
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="166">
+        <a href="/lists/top500/2001/06/"
+           class="">
+           June 2001
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="167">
+        <a href="/lists/top500/2000/11/"
+           class="">
+           November 2000
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="168">
+        <a href="/lists/top500/2000/06/"
+           class="">
+           June 2000
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="169">
+        <a href="/lists/top500/1999/11/"
+           class="">
+           November 1999
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="170">
+        <a href="/lists/top500/1999/06/"
+           class="">
+           June 1999
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="172">
+        <a href="/lists/top500/1998/11/"
+           class="">
+           November 1998
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="173">
+        <a href="/lists/top500/1998/06/"
+           class="">
+           June 1998
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="174">
+        <a href="/lists/top500/1997/11/"
+           class="">
+           November 1997
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="175">
+        <a href="/lists/top500/1997/06/"
+           class="">
+           June 1997
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="176">
+        <a href="/lists/top500/1996/11/"
+           class="">
+           November 1996
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="177">
+        <a href="/lists/top500/1996/06/"
+           class="">
+           June 1996
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="179">
+        <a href="/lists/top500/1995/11/"
+           class="">
+           November 1995
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="202">
+        <a href="/lists/top500/1995/06/"
+           class="">
+           June 1995
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="201">
+        <a href="/lists/top500/1994/11/"
+           class="">
+           November 1994
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="200">
+        <a href="/lists/top500/1994/06/"
+           class="">
+           June 1994
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="199">
+        <a href="/lists/top500/1993/11/"
+           class="">
+           November 1993
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="198">
+        <a href="/lists/top500/1993/06/"
+           class="">
+           June 1993
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="15">
+        <a href="/lists/hpcg/"
+           class=" dropdown-toggle">
+           HPCG
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-hpcg">
+
+    <li class="
+               "
+        id="327">
+        <a href="/lists/hpcg/2022/06/"
+           class="">
+           HPCG- June 2022
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="321">
+        <a href="/lists/hpcg/2021/11/"
+           class="">
+           HPCG - November 2021
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="312">
+        <a href="/lists/hpcg/2021/06/"
+           class="">
+           HPCG - June 2021
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="304">
+        <a href="/lists/hpcg/2020/11/"
+           class="">
+           HPCG - November 2020
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="293">
+        <a href="/lists/hpcg/2020/06/"
+           class="">
+           HPCG - June 2020
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="144">
+        <a href="/lists/hpcg/2019/11/"
+           class="">
+           HPCG - November 2019
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="180">
+        <a href="/lists/hpcg/2019/06/"
+           class="">
+           HPCG - June 2019
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="145">
+        <a href="/lists/hpcg/2018/11/"
+           class="">
+           HPCG - November 2018
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="182">
+        <a href="/lists/hpcg/2018/06/"
+           class="">
+           HPCG - June 2018
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="184">
+        <a href="/lists/hpcg/2017/11/"
+           class="">
+           HPCG - November 2017
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="16">
+        <a href="/lists/green500/"
+           class=" dropdown-toggle">
+           Green500
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-green500">
+
+    <li class="
+               "
+        id="328">
+        <a href="/lists/green500/2022/06/"
+           class="">
+           June 2022
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="322">
+        <a href="/lists/green500/2021/11/"
+           class="">
+           November 2021
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="314">
+        <a href="/lists/green500/2021/06/"
+           class="">
+           June 2021
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="305">
+        <a href="/lists/green500/2020/11/"
+           class="">
+           November 2020
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="294">
+        <a href="/lists/green500/2020/06/"
+           class="">
+           June 2020
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="187">
+        <a href="/lists/green500/2019/11/"
+           class="">
+           November 2019
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="191">
+        <a href="/lists/green500/2019/06/"
+           class="">
+           June 2019
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="195">
+        <a href="/lists/green500/2018/11/"
+           class="">
+           November 2018
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="181">
+        <a href="/lists/green500/2018/06/"
+           class="">
+           June 2018
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="188">
+        <a href="/lists/green500/2017/11/"
+           class="">
+           November 2017
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="207">
+        <a href="/lists/green500/2017/06/"
+           class="">
+           June 2017
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="209">
+        <a href="/lists/green500/2016/11/"
+           class="">
+           November 2016
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="185">
+        <a href="/lists/green500/2016/06/"
+           class="">
+           June 2016
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="208">
+        <a href="/lists/green500/2015/11/"
+           class="">
+           November 2015
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="210">
+        <a href="/lists/green500/2015/06/"
+           class="">
+           June 2015
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="255">
+        <a href="/lists/green500/2014/11/"
+           class="">
+           November 2014
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="256">
+        <a href="/lists/green500/2014/06/"
+           class="">
+           June 2014
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="257">
+        <a href="/lists/green500/2013/11/"
+           class="">
+           November 2013
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="258">
+        <a href="/lists/green500/2013/06/"
+           class="">
+           June 2013
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown
+               active"
+         id="48">
+        <a href="/statistics/"
+            class="dropdown-toggle" >
+           Statistics
+           
+               <b class="caret"></b>
+           
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-statistics">
+
+    <li class="
+               "
+        id="128">
+        <a href="/statistics/sublist/"
+           class="">
+           Sublist Generator
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="130">
+        <a href="/statistics/list/"
+           class="">
+           List Statistics
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="131">
+        <a href="/statistics/treemaps/"
+           class="">
+           Treemaps
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="133">
+        <a href="/statistics/overtime/"
+           class="">
+           Development over Time
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="134">
+        <a href="/statistics/efficiency-power-cores/"
+           class="">
+           Efficiency, Power, ...
+        </a>
+        
+    </li>
+
+    <li class="
+               active"
+        id="135">
+        <a href="/statistics/perfdevel/"
+           class="">
+           Performance Development
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown
+               "
+         id="12">
+        <a href="/resources/"
+            class="dropdown-toggle" >
+           Resources
+           
+               <b class="caret"></b>
+           
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-resources">
+
+    <li class="
+               "
+        id="248">
+        <a href="/resources/submit/"
+           class="">
+           Submit Results
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="53">
+        <a href="/certificates/"
+           class="">
+           TOP500 Certificates
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="47">
+        <a href="/resources/top-systems/"
+           class="">
+           TOP #1 Systems
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="46">
+        <a href="/timeline/"
+           class="">
+           Timeline
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="4">
+        <a href="/news/"
+           class="">
+           News
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="27">
+        <a href="/resources/videos/"
+           class="">
+           Videos
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="45">
+        <a href="/resources/frequently-asked-questions/"
+           class="">
+           Frequently Asked Questions
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="52">
+        <a href="/resources/top500-logo-usage/"
+           class="">
+           TOP500 Logo Usage
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="dropdown
+               "
+         id="44">
+        <a href="/project/"
+            class="dropdown-toggle" >
+           About
+           
+               <b class="caret"></b>
+           
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-about">
+
+    <li class="
+               "
+        id="140">
+        <a href="/project/call-for-participation/"
+           class="">
+           Call for Participation in the TOP500 / Green500 Lists
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="127">
+        <a href="/project/introduction/"
+           class="">
+           Introduction and Objectives
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="129">
+        <a href="/project/linpack/"
+           class="">
+           The Linpack Benchmark
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="132">
+        <a href="/project/top500_description/"
+           class="">
+           TOP500 Description
+        </a>
+        
+    </li>
+
+    <li class="dropdown-submenu
+               "
+        id="136">
+        <a href="/project/authors/"
+           class=" dropdown-toggle">
+           TOP500 Authors
+        </a>
+        
+            
+<ul class="dropdown-menu" aria-labelledby="dropdown-top500-authors">
+
+    <li class="
+               "
+        id="137">
+        <a href="/project/authors/hans-werner-meuer/"
+           class="">
+           Hans Werner Meuer (1936 - 2014†)
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="138">
+        <a href="/project/authors/erich-strohmaier/"
+           class="">
+           Erich Strohmaier
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="139">
+        <a href="/project/authors/jack-dongarra/"
+           class="">
+           Jack Dongarra
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="141">
+        <a href="/project/authors/horst-simon/"
+           class="">
+           Horst Simon
+        </a>
+        
+    </li>
+
+    <li class="
+               "
+        id="142">
+        <a href="/project/authors/martin-meuer/"
+           class="">
+           Martin Meuer
+        </a>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+</ul>
+        
+    </li>
+
+    <li class="
+               "
+         id="43">
+        <a href="/media-kit/"
+           >
+           MEDIA KIT
+           
+        </a>
+        
+    </li>
+
+</ul>
+
+                
+            </div>
+        </div>
+    </nav>
+
+    
+        <div class="container py-3">
+
+          <div class="row">
+            <div class="col-sm-12 col-md-9 col-lg-9" style="border: none; padding-left: 10px;">
+                
+                    <ul class="breadcrumb">
+                        
+<li>
+	
+	<a href="/">Home</a> <span class="separator">&raquo;</span>
+	
+</li>
+
+<li>
+	
+	<a href="/statistics/">Statistics</a> <span class="separator">&raquo;</span>
+	
+</li>
+
+<li>
+	
+	<span class="active">Performance Development</span>
+	
+</li>
+
+                    </ul>
+                
+
+            <h1 style="text-transform: uppercase">Performance Development</h1>
+            
+            
+            
+            
+	
+
+
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+
+    <script type='text/javascript'>
+google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('date', 'List');
+        dataTable.addColumn('number', 'Sum');
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+        dataTable.addColumn('number', '#1');
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+        dataTable.addColumn('number', '#500');
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+
+        dataTable.addRows([
+            
+                      [   new Date(1993, 5, 1),
+                          1128.57,
+                          "06/1993: Sum = 1.1 TFlop/s",
+                          59.70,
+                          "06/1993: #1 = 59.7 GFlop/s",
+                          0.42,
+                          "06/1993: #500 = 0.4 GFlop/s"],
+             
+                      [   new Date(1993, 10, 1),
+                          1493.35,
+                          "11/1993: Sum = 1.5 TFlop/s",
+                          124.00,
+                          "11/1993: #1 = 124.0 GFlop/s",
+                          0.47,
+                          "11/1993: #500 = 0.5 GFlop/s"],
+             
+                      [   new Date(1994, 5, 1),
+                          2317.01,
+                          "06/1994: Sum = 2.3 TFlop/s",
+                          143.40,
+                          "06/1994: #1 = 143.4 GFlop/s",
+                          0.84,
+                          "06/1994: #500 = 0.8 GFlop/s"],
+             
+                      [   new Date(1994, 10, 1),
+                          2732.24,
+                          "11/1994: Sum = 2.7 TFlop/s",
+                          170.00,
+                          "11/1994: #1 = 170.0 GFlop/s",
+                          1.16,
+                          "11/1994: #500 = 1.2 GFlop/s"],
+             
+                      [   new Date(1995, 5, 1),
+                          3927.00,
+                          "06/1995: Sum = 3.9 TFlop/s",
+                          170.00,
+                          "06/1995: #1 = 170.0 GFlop/s",
+                          1.96,
+                          "06/1995: #500 = 2.0 GFlop/s"],
+             
+                      [   new Date(1995, 10, 1),
+                          4784.34,
+                          "11/1995: Sum = 4.8 TFlop/s",
+                          170.00,
+                          "11/1995: #1 = 170.0 GFlop/s",
+                          2.49,
+                          "11/1995: #500 = 2.5 GFlop/s"],
+             
+                      [   new Date(1996, 5, 1),
+                          5892.24,
+                          "06/1996: Sum = 5.9 TFlop/s",
+                          220.40,
+                          "06/1996: #1 = 220.4 GFlop/s",
+                          3.31,
+                          "06/1996: #500 = 3.3 GFlop/s"],
+             
+                      [   new Date(1996, 10, 1),
+                          7981.24,
+                          "11/1996: Sum = 8.0 TFlop/s",
+                          368.20,
+                          "11/1996: #1 = 368.2 GFlop/s",
+                          4.62,
+                          "11/1996: #500 = 4.6 GFlop/s"],
+             
+                      [   new Date(1997, 5, 1),
+                          12844.19,
+                          "06/1997: Sum = 12.8 TFlop/s",
+                          1068.00,
+                          "06/1997: #1 = 1.1 TFlop/s",
+                          7.67,
+                          "06/1997: #500 = 7.7 GFlop/s"],
+             
+                      [   new Date(1997, 10, 1),
+                          16898.12,
+                          "11/1997: Sum = 16.9 TFlop/s",
+                          1338.00,
+                          "11/1997: #1 = 1.3 TFlop/s",
+                          9.51,
+                          "11/1997: #500 = 9.5 GFlop/s"],
+             
+                      [   new Date(1998, 5, 1),
+                          22625.14,
+                          "06/1998: Sum = 22.6 TFlop/s",
+                          1338.00,
+                          "06/1998: #1 = 1.3 TFlop/s",
+                          13.39,
+                          "06/1998: #500 = 13.4 GFlop/s"],
+             
+                      [   new Date(1998, 10, 1),
+                          29367.60,
+                          "11/1998: Sum = 29.4 TFlop/s",
+                          1338.00,
+                          "11/1998: #1 = 1.3 TFlop/s",
+                          17.12,
+                          "11/1998: #500 = 17.1 GFlop/s"],
+             
+                      [   new Date(1999, 5, 1),
+                          39062.57,
+                          "06/1999: Sum = 39.1 TFlop/s",
+                          2121.00,
+                          "06/1999: #1 = 2.1 TFlop/s",
+                          24.70,
+                          "06/1999: #500 = 24.7 GFlop/s"],
+             
+                      [   new Date(1999, 10, 1),
+                          50938.56,
+                          "11/1999: Sum = 50.9 TFlop/s",
+                          2379.00,
+                          "11/1999: #1 = 2.4 TFlop/s",
+                          33.09,
+                          "11/1999: #500 = 33.1 GFlop/s"],
+             
+                      [   new Date(2000, 5, 1),
+                          64230.11,
+                          "06/2000: Sum = 64.2 TFlop/s",
+                          2379.00,
+                          "06/2000: #1 = 2.4 TFlop/s",
+                          43.82,
+                          "06/2000: #500 = 43.8 GFlop/s"],
+             
+                      [   new Date(2000, 10, 1),
+                          88082.45,
+                          "11/2000: Sum = 88.1 TFlop/s",
+                          4938.00,
+                          "11/2000: #1 = 4.9 TFlop/s",
+                          55.30,
+                          "11/2000: #500 = 55.3 GFlop/s"],
+             
+                      [   new Date(2001, 5, 1),
+                          108276.78,
+                          "06/2001: Sum = 108.3 TFlop/s",
+                          7226.00,
+                          "06/2001: #1 = 7.2 TFlop/s",
+                          67.78,
+                          "06/2001: #500 = 67.8 GFlop/s"],
+             
+                      [   new Date(2001, 10, 1),
+                          134977.51,
+                          "11/2001: Sum = 135.0 TFlop/s",
+                          7226.00,
+                          "11/2001: #1 = 7.2 TFlop/s",
+                          94.30,
+                          "11/2001: #500 = 94.3 GFlop/s"],
+             
+                      [   new Date(2002, 5, 1),
+                          222263.77,
+                          "06/2002: Sum = 222.3 TFlop/s",
+                          35860.00,
+                          "06/2002: #1 = 35.9 TFlop/s",
+                          134.30,
+                          "06/2002: #500 = 134.3 GFlop/s"],
+             
+                      [   new Date(2002, 10, 1),
+                          291814.16,
+                          "11/2002: Sum = 291.8 TFlop/s",
+                          35860.00,
+                          "11/2002: #1 = 35.9 TFlop/s",
+                          195.80,
+                          "11/2002: #500 = 195.8 GFlop/s"],
+             
+                      [   new Date(2003, 5, 1),
+                          370049.26,
+                          "06/2003: Sum = 370.0 TFlop/s",
+                          35860.00,
+                          "06/2003: #1 = 35.9 TFlop/s",
+                          241.40,
+                          "06/2003: #500 = 241.4 GFlop/s"],
+             
+                      [   new Date(2003, 10, 1),
+                          526740.41,
+                          "11/2003: Sum = 526.7 TFlop/s",
+                          35860.00,
+                          "11/2003: #1 = 35.9 TFlop/s",
+                          378.60,
+                          "11/2003: #500 = 378.6 GFlop/s"],
+             
+                      [   new Date(2004, 5, 1),
+                          812313.21,
+                          "06/2004: Sum = 812.3 TFlop/s",
+                          35860.00,
+                          "06/2004: #1 = 35.9 TFlop/s",
+                          606.90,
+                          "06/2004: #500 = 606.9 GFlop/s"],
+             
+                      [   new Date(2004, 10, 1),
+                          1128834.52,
+                          "11/2004: Sum = 1.1 PFlop/s",
+                          70720.00,
+                          "11/2004: #1 = 70.7 TFlop/s",
+                          840.02,
+                          "11/2004: #500 = 840.0 GFlop/s"],
+             
+                      [   new Date(2005, 5, 1),
+                          1694886.64,
+                          "06/2005: Sum = 1.7 PFlop/s",
+                          136800.00,
+                          "06/2005: #1 = 136.8 TFlop/s",
+                          1166.00,
+                          "06/2005: #500 = 1.2 TFlop/s"],
+             
+                      [   new Date(2005, 10, 1),
+                          2299341.68,
+                          "11/2005: Sum = 2.3 PFlop/s",
+                          280600.00,
+                          "11/2005: #1 = 280.6 TFlop/s",
+                          1645.70,
+                          "11/2005: #500 = 1.6 TFlop/s"],
+             
+                      [   new Date(2006, 5, 1),
+                          2789465.47,
+                          "06/2006: Sum = 2.8 PFlop/s",
+                          280600.00,
+                          "06/2006: #1 = 280.6 TFlop/s",
+                          2026.00,
+                          "06/2006: #500 = 2.0 TFlop/s"],
+             
+                      [   new Date(2006, 10, 1),
+                          3527867.61,
+                          "11/2006: Sum = 3.5 PFlop/s",
+                          280600.00,
+                          "11/2006: #1 = 280.6 TFlop/s",
+                          2736.90,
+                          "11/2006: #500 = 2.7 TFlop/s"],
+             
+                      [   new Date(2007, 5, 1),
+                          4950600.48,
+                          "06/2007: Sum = 5.0 PFlop/s",
+                          280600.00,
+                          "06/2007: #1 = 280.6 TFlop/s",
+                          4031.00,
+                          "06/2007: #500 = 4.0 TFlop/s"],
+             
+                      [   new Date(2007, 10, 1),
+                          6977593.51,
+                          "11/2007: Sum = 7.0 PFlop/s",
+                          478200.00,
+                          "11/2007: #1 = 478.2 TFlop/s",
+                          5937.33,
+                          "11/2007: #500 = 5.9 TFlop/s"],
+             
+                      [   new Date(2008, 5, 1),
+                          12152691.08,
+                          "06/2008: Sum = 12.2 PFlop/s",
+                          1026000.00,
+                          "06/2008: #1 = 1.0 PFlop/s",
+                          8996.78,
+                          "06/2008: #500 = 9.0 TFlop/s"],
+             
+                      [   new Date(2008, 10, 1),
+                          17373520.05,
+                          "11/2008: Sum = 17.4 PFlop/s",
+                          1105000.00,
+                          "11/2008: #1 = 1.1 PFlop/s",
+                          12593.50,
+                          "11/2008: #500 = 12.6 TFlop/s"],
+             
+                      [   new Date(2009, 5, 1),
+                          22640789.57,
+                          "06/2009: Sum = 22.6 PFlop/s",
+                          1105000.00,
+                          "06/2009: #1 = 1.1 PFlop/s",
+                          17110.00,
+                          "06/2009: #500 = 17.1 TFlop/s"],
+             
+                      [   new Date(2009, 10, 1),
+                          28006450.09,
+                          "11/2009: Sum = 28.0 PFlop/s",
+                          1759000.00,
+                          "11/2009: #1 = 1.8 PFlop/s",
+                          20070.00,
+                          "11/2009: #500 = 20.1 TFlop/s"],
+             
+                      [   new Date(2010, 5, 1),
+                          32434684.56,
+                          "06/2010: Sum = 32.4 PFlop/s",
+                          1759000.00,
+                          "06/2010: #1 = 1.8 PFlop/s",
+                          24670.00,
+                          "06/2010: #500 = 24.7 TFlop/s"],
+             
+                      [   new Date(2010, 10, 1),
+                          43786881.73,
+                          "11/2010: Sum = 43.8 PFlop/s",
+                          2566000.00,
+                          "11/2010: #1 = 2.6 PFlop/s",
+                          31124.36,
+                          "11/2010: #500 = 31.1 TFlop/s"],
+             
+                      [   new Date(2011, 5, 1),
+                          58930025.84,
+                          "06/2011: Sum = 58.9 PFlop/s",
+                          8162000.00,
+                          "06/2011: #1 = 8.2 PFlop/s",
+                          40187.29,
+                          "06/2011: #500 = 40.2 TFlop/s"],
+             
+                      [   new Date(2011, 10, 1),
+                          74069633.68,
+                          "11/2011: Sum = 74.1 PFlop/s",
+                          10510000.00,
+                          "11/2011: #1 = 10.5 PFlop/s",
+                          50941.40,
+                          "11/2011: #500 = 50.9 TFlop/s"],
+             
+                      [   new Date(2012, 5, 1),
+                          123417786.71,
+                          "06/2012: Sum = 123.4 PFlop/s",
+                          16324751.00,
+                          "06/2012: #1 = 16.3 PFlop/s",
+                          60824.40,
+                          "06/2012: #500 = 60.8 TFlop/s"],
+             
+                      [   new Date(2012, 10, 1),
+                          162139386.75,
+                          "11/2012: Sum = 162.1 PFlop/s",
+                          17590000.00,
+                          "11/2012: #1 = 17.6 PFlop/s",
+                          76411.00,
+                          "11/2012: #500 = 76.4 TFlop/s"],
+             
+                      [   new Date(2013, 5, 1),
+                          228566576.13,
+                          "06/2013: Sum = 228.6 PFlop/s",
+                          33862700.00,
+                          "06/2013: #1 = 33.9 PFlop/s",
+                          96646.00,
+                          "06/2013: #500 = 96.6 TFlop/s"],
+             
+                      [   new Date(2013, 10, 1),
+                          254971492.87,
+                          "11/2013: Sum = 255.0 PFlop/s",
+                          33862700.00,
+                          "11/2013: #1 = 33.9 PFlop/s",
+                          117992.00,
+                          "11/2013: #500 = 118.0 TFlop/s"],
+             
+                      [   new Date(2014, 5, 1),
+                          278638938.09,
+                          "06/2014: Sum = 278.6 PFlop/s",
+                          33862700.00,
+                          "06/2014: #1 = 33.9 PFlop/s",
+                          134248.88,
+                          "06/2014: #500 = 134.2 TFlop/s"],
+             
+                      [   new Date(2014, 10, 1),
+                          313022095.99,
+                          "11/2014: Sum = 313.0 PFlop/s",
+                          33862700.00,
+                          "11/2014: #1 = 33.9 PFlop/s",
+                          153357.90,
+                          "11/2014: #500 = 153.4 TFlop/s"],
+             
+                      [   new Date(2015, 5, 1),
+                          364140347.36,
+                          "06/2015: Sum = 364.1 PFlop/s",
+                          33862700.00,
+                          "06/2015: #1 = 33.9 PFlop/s",
+                          164790.72,
+                          "06/2015: #500 = 164.8 TFlop/s"],
+             
+                      [   new Date(2015, 10, 1),
+                          422609596.60,
+                          "11/2015: Sum = 422.6 PFlop/s",
+                          33862700.00,
+                          "11/2015: #1 = 33.9 PFlop/s",
+                          206400.00,
+                          "11/2015: #500 = 206.4 TFlop/s"],
+             
+                      [   new Date(2016, 5, 1),
+                          572075795.81,
+                          "06/2016: Sum = 572.1 PFlop/s",
+                          93014593.88,
+                          "06/2016: #1 = 93.0 PFlop/s",
+                          286239.70,
+                          "06/2016: #500 = 286.2 TFlop/s"],
+             
+                      [   new Date(2016, 10, 1),
+                          676771901.49,
+                          "11/2016: Sum = 676.8 PFlop/s",
+                          93014593.88,
+                          "11/2016: #1 = 93.0 PFlop/s",
+                          350400.00,
+                          "11/2016: #500 = 350.4 TFlop/s"],
+             
+                      [   new Date(2017, 5, 1),
+                          753276958.81,
+                          "06/2017: Sum = 753.3 PFlop/s",
+                          93014593.88,
+                          "06/2017: #1 = 93.0 PFlop/s",
+                          433300.00,
+                          "06/2017: #500 = 433.3 TFlop/s"],
+             
+                      [   new Date(2017, 10, 1),
+                          849580689.67,
+                          "11/2017: Sum = 849.6 PFlop/s",
+                          93014593.88,
+                          "11/2017: #1 = 93.0 PFlop/s",
+                          548672.00,
+                          "11/2017: #500 = 548.7 TFlop/s"],
+             
+                      [   new Date(2018, 5, 1),
+                          1210914864.08,
+                          "06/2018: Sum = 1.2 EFlop/s",
+                          122300000.00,
+                          "06/2018: #1 = 122.3 PFlop/s",
+                          715551.00,
+                          "06/2018: #500 = 715.6 TFlop/s"],
+             
+                      [   new Date(2018, 10, 1),
+                          1414955581.78,
+                          "11/2018: Sum = 1.4 EFlop/s",
+                          143500000.00,
+                          "11/2018: #1 = 143.5 PFlop/s",
+                          874800.00,
+                          "11/2018: #500 = 874.8 TFlop/s"],
+             
+                      [   new Date(2019, 5, 1),
+                          1559575379.78,
+                          "06/2019: Sum = 1.6 EFlop/s",
+                          148600000.00,
+                          "06/2019: #1 = 148.6 PFlop/s",
+                          1021000.00,
+                          "06/2019: #500 = 1.0 PFlop/s"],
+             
+                      [   new Date(2019, 10, 1),
+                          1646887142.78,
+                          "11/2019: Sum = 1.6 EFlop/s",
+                          148600000.00,
+                          "11/2019: #1 = 148.6 PFlop/s",
+                          1142000.00,
+                          "11/2019: #500 = 1.1 PFlop/s"],
+             
+                      [   new Date(2020, 5, 1),
+                          2206134393.77,
+                          "06/2020: Sum = 2.2 EFlop/s",
+                          415530000.00,
+                          "06/2020: #1 = 415.5 PFlop/s",
+                          1228000.00,
+                          "06/2020: #500 = 1.2 PFlop/s"],
+             
+                      [   new Date(2020, 10, 1),
+                          2428761851.77,
+                          "11/2020: Sum = 2.4 EFlop/s",
+                          442010000.00,
+                          "11/2020: #1 = 442.0 PFlop/s",
+                          1316840.00,
+                          "11/2020: #500 = 1.3 PFlop/s"],
+             
+                      [   new Date(2021, 5, 1),
+                          2786058799.77,
+                          "06/2021: Sum = 2.8 EFlop/s",
+                          442010000.00,
+                          "06/2021: #1 = 442.0 PFlop/s",
+                          1511000.00,
+                          "06/2021: #500 = 1.5 PFlop/s"],
+             
+                      [   new Date(2021, 10, 1),
+                          3036861783.77,
+                          "11/2021: Sum = 3.0 EFlop/s",
+                          442010000.00,
+                          "11/2021: #1 = 442.0 PFlop/s",
+                          1649110.00,
+                          "11/2021: #500 = 1.6 PFlop/s"],
+             
+                      [   new Date(2022, 5, 1),
+                          4403083213.77,
+                          "06/2022: Sum = 4.4 EFlop/s",
+                          1102000000.00,
+                          "06/2022: #1 = 1.1 EFlop/s",
+                          1649110.00,
+                          "06/2022: #500 = 1.6 PFlop/s"],
+             
+        ]);
+
+        var options = {
+            colors: ["#207e27", "#ba7301", "#004578", "#254a40",  "#0285aa", "#ce7f00", "#498d7b", "#03317e", "#3d3c3f","#03317e", "#BED5B9", "#F8D5B1"],
+            title: 'Performance Development',
+            titleTextStyle: {
+                fontSize: 21,
+            },
+            legend: { position: 'bottom' },
+            hAxis: {
+                title: "Lists",
+                slantedTextAngle: 90,
+                viewWindow: {
+
+                },
+               },
+            explorer: {
+                actions: [ 'dragToZoom', 'rightClickToReset'],
+            },
+            series: {
+                0: { pointShape: 'circle' },
+                1: { pointShape: 'triangle' },
+                2: { pointShape: 'square' },
+            },
+            pointSize: 7,
+            vAxis: {
+                title: "Performance",
+                logScale: true,
+                ticks: [
+                    {v: 0.1, f:'100 MFlop/s'},
+                    {v: 1, f:'1 GFlop/s'},
+                    {v: 10, f:'10 GFlop/s'},
+                    {v: 100, f:'100 GFlop/s'},
+                    {v: 1000, f:'1 TFlop/s'},
+                    {v: 10000, f:'10 TFlop/s'},
+                    {v: 100000, f:'100 TFlop/s'},
+                    {v: 1000000, f: '1 PFlop/s'},
+                    {v: 10000000, f:'10 PFlop/s'},
+                    {v: 100000000, f:'100 PFlop/s'},
+                    {v: 1000000000, f:'1 EFlop/s'},
+                    {v: 10000000000, f:'10 EFlop/s'}
+                ],
+                   },
+        };
+
+        var options2 = $.extend( true, {}, options );
+        options2.trendlines = {
+                0: {
+                    visibleInLegend: false,
+                },
+                1: {
+
+                    visibleInLegend: false,
+                },
+                2: {
+
+                    visibleInLegend: false,
+                },
+            };
+
+        options2.hAxis.viewWindow.max = new Date(2028.0, 10, 1);
+        options2.title = "Projected Performance Development";
+
+        var chart1 = new google.visualization.ScatterChart(document.getElementById('chart_div1'));
+        google.visualization.events.addListener(chart1, 'ready', function () {
+            document.getElementById('png1').outerHTML = '<a href="' + chart1.getImageURI() + '">Printable version</a>';
+        });
+
+        var chart2 = new google.visualization.ScatterChart(document.getElementById('chart_div2'));
+        google.visualization.events.addListener(chart2, 'ready', function () {
+            document.getElementById('png2').outerHTML = '<a href="' + chart2.getImageURI() + '">Printable version</a>';
+        });
+
+        chart1.draw(dataTable, options);
+        chart2.draw(dataTable, options2);
+      }
+    </script>
+
+
+ <div id="chart_div1" style="width: 900px; height: 800px;"></div>
+
+ <div id='png1'></div>
+
+ <div id="chart_div2" style="width: 900px; height: 800px;"></div>
+
+ <div id='png2'></div>
+
+
+            </div>
+
+           <div class="col-sm-12 col-md-3 col-lg-3">
+                
+                    <div id="right" style="width: 250px;">
+                        <ul class="kachel-nav ">
+                            <li><a class="top500" title="TOP500" href="/">TOP500</a></li>
+                            <li><a class="list" title="Current List" href="/lists/top500/2022/06"><h1>Current List</h1></a></li>
+                            <li><a class="anniv" title="25 Year Anniversary" href="/25years"><h1>25 Year Anniversary</h1></a></li>
+                            <li><a class="newsletter" title="Newsletter" href="https://www.top500.org/accounts/signup"><h1>Newsletter Signup</h1></a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-325590-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-325590-1');
+</script>
+
+                
+           </div>
+          </div>
+        </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var $tabs = $('#t_draggable2')
+      $("tbody.t_sortable").sortable({
+        connectWith: ".t_sortable",
+        items: "> tr:not(:first)",
+        appendTo: $tabs,
+        helper:"clone",
+        zIndex: 999990
+      }).disableSelection();
+
+      var $tab_items = $(".nav-tabs > li", $tabs).droppable({
+        accept: ".t_sortable tr",
+        hoverClass: "ui-state-hover",
+        drop: function( event, ui ) { return false; }
+      });
+    });
+    </script>
+    
+    
+
+    
+
+    
+
+  <footer class="page">
+    <div class="container">
+        <div class="row">
+            <p class="site-info text-left">
+                <a href="/imprint" class="footer-link">Imprint</a>
+                <a href="/contact" class="footer-link">Contact</a>
+
+
+
+    Logged in as: 
+        <a href="/accounts/update/">invi</a>
+
+    <a class="footer-link" href="/accounts/logout/?next=/statistics/perfdevel/" >
+        <span class="glyphicon glyphicon-log-out"></span> Log out</a>
+
+<br/>
+                Copyright 1993-2022 TOP500.org (c)<span class="separator"></span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+  </body>
+</html>
