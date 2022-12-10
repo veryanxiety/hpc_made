@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <stdio.h>
-#include "comparealgorithms"
+#include "comparealgorithms.cpp"
 #include "deletematrix.cpp"
 
 int main(int argc, char **argv)
