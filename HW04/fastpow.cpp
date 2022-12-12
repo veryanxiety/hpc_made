@@ -2,8 +2,25 @@
 #include <vector>
 #include <cstdlib>
 
-void printMatrix(const int matrix [], int n)
+int fastintsqrt(int n)
 {
+    int left = 0;
+    int right = n;
+    while (left < right - 1)
+    {
+        int mid = (left + right) / 2;
+        if ((long long int) mid * mid < n)
+            left = mid;
+        else
+            right = mid;
+    }
+    return right;
+}
+
+void printMatrix(std::vector<int> &matrix)
+{
+    int n = fastintsqrt(matrix.size());
+
     for (size_t i = 0; i < n; i++)
     {
         std::cout << matrix[i * n];
@@ -14,22 +31,48 @@ void printMatrix(const int matrix [], int n)
     }
 }
 
-std::vector<int> &matrixMul(std::vector<int> &mat1, std::vector<int> &mat2)
+void matrixMul(std::vector<int> &mat1, std::vector<int> &mat2, std::vector<int> &result)
 {
-    std::vector<int> result(n * n, 0);
-    
+    int n = fastintsqrt(mat1.size());
+
+	for (int k = 0; k < n; k++)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				result[i * n + j] += mat1[i * n + k] * mat2[k * n + j];
+			}
+		}
+	}
 }
 
-std::vector<int> &matrixPower(std::vector<int> &matrix, int n)
+void matrixPower(std::vector<int> &matrix, int n, std::vector<int> &result)
 {
     if (n == 1)
-        return matrix;
+    {
+        result = matrix;
+        return;
+    }
+
+    int size = fastintsqrt(matrix.size());
 
     if (n & 1)
-        return matrixMul(matrix, matrixPower(matrix, n - 1));
-    std::vector<int> matrix2(n * n, 0);
-    matrix2 = matrixPower(matrix, n / 2);
-    return matrixMul(matrix2, matrix2);
+    {
+        std::vector<int> temp1(size * size, 0);
+        std::vector<int> temp2(size * size, 0);
+        matrixPower(matrix, n - 1, temp1);  
+
+        matrixMul(matrix, temp1, temp2);
+
+        result = temp2;
+        return;
+    }
+    std::vector<int> matrix2(size * size, 0);
+    matrixPower(matrix, n / 2, matrix2);
+    std::vector<int> temp(size * size, 0);
+    matrixMul(matrix2, matrix2, temp);
+    result = temp;
 }
 
 int main(int argc, char **argv)
@@ -46,9 +89,8 @@ int main(int argc, char **argv)
 
     int nVertex;
     std::cin >> nVertex;
-    int *matrix = new int[nVertex * nVertex];
-    for (size_t i = 0; i < nVertex * nVertex; i++)
-        matrix[i] = 0;
+    std::vector<int> matrix(nVertex * nVertex, 0);
+    std::vector<int> matrixn(nVertex * nVertex, 0);
     
     int x;
     int y;
@@ -56,13 +98,12 @@ int main(int argc, char **argv)
         matrix[x * nVertex + y] = 1;
     
     std::cout << "A ^ 1\n";
-    printMatrix(matrix, nVertex);
+    printMatrix(matrix);
 
-    matrixPower(matrix, power);
+    matrixPower(matrix, power, matrixn);
 
     std::cout << "A ^ " << power << "\n";
-    printMatrix(matrix, nVertex);    
-    
-    delete [] matrix;
+    printMatrix(matrixn);    
+
     return 0;
 }

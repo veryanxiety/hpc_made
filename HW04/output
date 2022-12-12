@@ -1,0 +1,345 @@
+Pagerank results vs naive
+Acton_Town: PR is 0.00542588 vs Naive is 4
+Aldgate: PR is 0.00247987 vs Naive is 2
+Aldgate_East: PR is 0.00366577 vs Naive is 3
+All_Saints: PR is 0.00269966 vs Naive is 2
+Alperton: PR is 0.00307736 vs Naive is 2
+Amersham: PR is 0.00185264 vs Naive is 1
+Angel: PR is 0.00251142 vs Naive is 2
+Archway: PR is 0.00308684 vs Naive is 2
+Arnos_Grove: PR is 0.00338654 vs Naive is 2
+Arsenal: PR is 0.00279708 vs Naive is 2
+Baker_Street: PR is 0.00842487 vs Naive is 7
+Balham: PR is 0.00323834 vs Naive is 2
+Bank: PR is 0.00694648 vs Naive is 6
+Barbican: PR is 0.00248719 vs Naive is 2
+Barking: PR is 0.00316621 vs Naive is 2
+Barkingside: PR is 0.00319787 vs Naive is 2
+Barons_Court: PR is 0.00385039 vs Naive is 3
+Bayswater: PR is 0.00263023 vs Naive is 2
+Beckton: PR is 0.00186991 vs Naive is 1
+Beckton_Park: PR is 0.00335918 vs Naive is 2
+Becontree: PR is 0.00328915 vs Naive is 2
+Belsize_Park: PR is 0.00298425 vs Naive is 2
+Bermondsey: PR is 0.0025417 vs Naive is 2
+Bethnal_Green: PR is 0.00249222 vs Naive is 2
+Blackfriars: PR is 0.00263953 vs Naive is 2
+Blackhorse_Road: PR is 0.00333904 vs Naive is 2
+Blackwall: PR is 0.00266955 vs Naive is 2
+Bond_Street: PR is 0.0046071 vs Naive is 4
+Borough: PR is 0.00243901 vs Naive is 2
+Boston_Manor: PR is 0.00303634 vs Naive is 2
+Bounds_Green: PR is 0.00329342 vs Naive is 2
+Bow_Church: PR is 0.00277702 vs Naive is 2
+Bow_Road: PR is 0.00264092 vs Naive is 2
+Brent_Cross: PR is 0.00330259 vs Naive is 2
+Brixton: PR is 0.00145459 vs Naive is 1
+Bromley-By-Bow: PR is 0.00267973 vs Naive is 2
+Buckhurst_Hill: PR is 0.00321099 vs Naive is 2
+Burnt_Oak: PR is 0.00361214 vs Naive is 2
+Caledonian_Road: PR is 0.00263405 vs Naive is 2
+Camden_Town: PR is 0.00523306 vs Naive is 4
+Canada_Water: PR is 0.00524355 vs Naive is 4
+Canary_Wharf: PR is 0.00523968 vs Naive is 4
+Canning_Town: PR is 0.00534741 vs Naive is 4
+Cannon_Street: PR is 0.0027038 vs Naive is 2
+Canons_Park: PR is 0.00332192 vs Naive is 2
+Chalfont_&_Latimer: PR is 0.00532761 vs Naive is 3
+Chalk_Farm: PR is 0.00282593 vs Naive is 2
+Chancery_Lane: PR is 0.00241002 vs Naive is 2
+Charing_Cross: PR is 0.00334714 vs Naive is 3
+Chesham: PR is 0.00185264 vs Naive is 1
+Chigwell: PR is 0.0031779 vs Naive is 2
+Chiswick_Park: PR is 0.00272021 vs Naive is 2
+Chorleywood: PR is 0.00345691 vs Naive is 2
+Clapham_Common: PR is 0.00303561 vs Naive is 2
+Clapham_North: PR is 0.00289651 vs Naive is 2
+Clapham_South: PR is 0.00314569 vs Naive is 2
+Cockfosters: PR is 0.00187899 vs Naive is 1
+Colindale: PR is 0.0034933 vs Naive is 2
+Colliers_Wood: PR is 0.00350617 vs Naive is 2
+Covent_Garden: PR is 0.0023183 vs Naive is 2
+Crossharbour_&_London_Arena: PR is 0.00309372 vs Naive is 2
+Croxley: PR is 0.00344905 vs Naive is 2
+Custom_House: PR is 0.00302717 vs Naive is 2
+Cutty_Sark: PR is 0.00334678 vs Naive is 2
+Cyprus: PR is 0.00346552 vs Naive is 2
+Dagenham_East: PR is 0.00340254 vs Naive is 2
+Dagenham_Heathway: PR is 0.00334412 vs Naive is 2
+Debden: PR is 0.00343639 vs Naive is 2
+Deptford_Bridge: PR is 0.00352074 vs Naive is 2
+Devons_Road: PR is 0.00276698 vs Naive is 2
+Dollis_Hill: PR is 0.00289069 vs Naive is 2
+Ealing_Broadway: PR is 0.00291399 vs Naive is 2
+Ealing_Common: PR is 0.00423707 vs Naive is 3
+Earl's_Court: PR is 0.00762204 vs Naive is 6
+Eastcote: PR is 0.00317014 vs Naive is 2
+East_Acton: PR is 0.0029763 vs Naive is 2
+East_Finchley: PR is 0.00325697 vs Naive is 2
+East_Ham: PR is 0.00308529 vs Naive is 2
+East_India: PR is 0.00270361 vs Naive is 2
+East_Putney: PR is 0.00332909 vs Naive is 2
+Edgware: PR is 0.00188133 vs Naive is 1
+Edgware_Road_(B): PR is 0.00261276 vs Naive is 2
+Edgware_Road_(C): PR is 0.00254489 vs Naive is 2
+Elephant_&_Castle: PR is 0.00360836 vs Naive is 3
+Elm_Park: PR is 0.00347058 vs Naive is 2
+Elverson_Road: PR is 0.0036359 vs Naive is 2
+Embankment: PR is 0.00456998 vs Naive is 4
+Epping: PR is 0.00185793 vs Naive is 1
+Euston: PR is 0.00490079 vs Naive is 4
+Euston_Square: PR is 0.00252042 vs Naive is 2
+Fairlop: PR is 0.00320921 vs Naive is 2
+Farringdon: PR is 0.00251142 vs Naive is 2
+Finchley_Central: PR is 0.00499404 vs Naive is 3
+Finchley_Road: PR is 0.00515562 vs Naive is 4
+Finsbury_Park: PR is 0.00558939 vs Naive is 4
+Fulham_Broadway: PR is 0.00295641 vs Naive is 2
+Gallions_Reach: PR is 0.0035881 vs Naive is 2
+Gants_Hill: PR is 0.00313694 vs Naive is 2
+Gloucester_Road: PR is 0.00374096 vs Naive is 3
+Golders_Green: PR is 0.00321067 vs Naive is 2
+Goldhawk_Road: PR is 0.00277039 vs Naive is 2
+Goodge_Street: PR is 0.00233603 vs Naive is 2
+Grange_Hill: PR is 0.00319972 vs Naive is 2
+Great_Portland_Street: PR is 0.00250614 vs Naive is 2
+Greenford: PR is 0.00329769 vs Naive is 2
+Greenwich: PR is 0.00342764 vs Naive is 2
+Green_Park: PR is 0.00669239 vs Naive is 6
+Gunnersbury: PR is 0.00290576 vs Naive is 2
+Hainault: PR is 0.00320981 vs Naive is 2
+Hammersmith: PR is 0.00525033 vs Naive is 4
+Hampstead: PR is 0.00310815 vs Naive is 2
+Hanger_Lane: PR is 0.00309926 vs Naive is 2
+Harlesden: PR is 0.00331131 vs Naive is 2
+Harrow_&_Wealdston: PR is 0.00190998 vs Naive is 1
+Harrow-on-the-Hill: PR is 0.00446691 vs Naive is 3
+Hatton_Cross: PR is 0.00447948 vs Naive is 3
+Heathrow_Terminals_1,_2_&_3: PR is 0.00301727 vs Naive is 2
+Heathrow_Terminal_4: PR is 0.00301727 vs Naive is 2
+Hendon_Central: PR is 0.00339361 vs Naive is 2
+Heron_Quays: PR is 0.00282376 vs Naive is 2
+High_Barnet: PR is 0.00188817 vs Naive is 1
+High_Street_Kensington: PR is 0.00378574 vs Naive is 3
+Highbury_&_Islington: PR is 0.00265749 vs Naive is 2
+Highgate: PR is 0.00317887 vs Naive is 2
+Hillingdon: PR is 0.00359582 vs Naive is 2
+Holborn: PR is 0.00462998 vs Naive is 4
+Holland_Park: PR is 0.00276021 vs Naive is 2
+Holloway_Road: PR is 0.00274535 vs Naive is 2
+Hornchurch: PR is 0.00355538 vs Naive is 2
+Hounslow_Central: PR is 0.0030807 vs Naive is 2
+Hounslow_East: PR is 0.00308973 vs Naive is 2
+Hounslow_West: PR is 0.0030474 vs Naive is 2
+Hyde_Park_Corner: PR is 0.00240125 vs Naive is 2
+Ickenham: PR is 0.00347444 vs Naive is 2
+Island_Gardens: PR is 0.00326966 vs Naive is 2
+Kennington: PR is 0.00362731 vs Naive is 3
+Kensal_Green: PR is 0.00320786 vs Naive is 2
+Kensington_(Olympia): PR is 0.00137239 vs Naive is 1
+Kentish_Town: PR is 0.00281972 vs Naive is 2
+Kenton: PR is 0.00367246 vs Naive is 2
+Kew_Gardens: PR is 0.00310357 vs Naive is 2
+Kilburn: PR is 0.00283677 vs Naive is 2
+Kilburn_Park: PR is 0.00305974 vs Naive is 2
+Kingsbury: PR is 0.00297798 vs Naive is 2
+King's_Cross_St._Pancras: PR is 0.0085801 vs Naive is 7
+Knightsbridge: PR is 0.00247591 vs Naive is 2
+Ladbroke_Grove: PR is 0.00289663 vs Naive is 2
+Lambeth_North: PR is 0.00239077 vs Naive is 2
+Lancaster_Gate: PR is 0.00259904 vs Naive is 2
+Latimer_Road: PR is 0.00289933 vs Naive is 2
+Leicester_Square: PR is 0.00443417 vs Naive is 4
+Lewisham: PR is 0.00189262 vs Naive is 1
+Leyton: PR is 0.00278341 vs Naive is 2
+Leytonstone: PR is 0.00433161 vs Naive is 3
+Limehouse: PR is 0.00254089 vs Naive is 2
+Liverpool_Street: PR is 0.0059167 vs Naive is 5
+London_Bridge: PR is 0.00476125 vs Naive is 4
+Loughton: PR is 0.00332307 vs Naive is 2
+Maida_Vale: PR is 0.00295032 vs Naive is 2
+Manor_House: PR is 0.00296152 vs Naive is 2
+Mansion_House: PR is 0.00270364 vs Naive is 2
+Marble_Arch: PR is 0.00249429 vs Naive is 2
+Marylebone: PR is 0.00255 vs Naive is 2
+Mile_End: PR is 0.0050631 vs Naive is 4
+Mill_Hill_East: PR is 0.00174701 vs Naive is 1
+Monument: PR is 0.00264 vs Naive is 2
+Moorgate: PR is 0.00475242 vs Naive is 4
+Moor_Park: PR is 0.00495732 vs Naive is 3
+Morden: PR is 0.00188663 vs Naive is 1
+Mornington_Crescent: PR is 0.00257235 vs Naive is 2
+Mudchute: PR is 0.00318817 vs Naive is 2
+Neasden: PR is 0.002851 vs Naive is 2
+Newbury_Park: PR is 0.0031746 vs Naive is 2
+New_Cross: PR is 0.00153728 vs Naive is 1
+New_Cross_Gate: PR is 0.00153728 vs Naive is 1
+Northfields: PR is 0.0029683 vs Naive is 2
+Northolt: PR is 0.00338983 vs Naive is 2
+Northwick_Park: PR is 0.00294702 vs Naive is 2
+Northwood: PR is 0.00326145 vs Naive is 2
+Northwood_Hills: PR is 0.00321277 vs Naive is 2
+North_Acton: PR is 0.00445815 vs Naive is 3
+North_Ealing: PR is 0.00294466 vs Naive is 2
+North_Greenwich: PR is 0.00268 vs Naive is 2
+North_Harrow: PR is 0.00307811 vs Naive is 2
+North_Wembley: PR is 0.00348 vs Naive is 2
+Notting_Hill_Gate: PR is 0.00517352 vs Naive is 4
+Oakwood: PR is 0.00360721 vs Naive is 2
+Old_Street: PR is 0.00248719 vs Naive is 2
+Osterley: PR is 0.00307545 vs Naive is 2
+Oval: PR is 0.00260324 vs Naive is 2
+Oxford_Circus: PR is 0.00665521 vs Naive is 6
+Paddington: PR is 0.006505 vs Naive is 5
+Park_Royal: PR is 0.00302602 vs Naive is 2
+Parsons_Green: PR is 0.00309879 vs Naive is 2
+Perivale: PR is 0.00320411 vs Naive is 2
+Picadilly_Circus: PR is 0.00439198 vs Naive is 4
+Pimlico: PR is 0.00255627 vs Naive is 2
+Pinner: PR is 0.00315373 vs Naive is 2
+Plaistow: PR is 0.00284107 vs Naive is 2
+Poplar: PR is 0.0051359 vs Naive is 4
+Preston_Road: PR is 0.00287776 vs Naive is 2
+Prince_Regent: PR is 0.00315096 vs Naive is 2
+Pudding_Mill_Lane: PR is 0.00273082 vs Naive is 2
+Putney_Bridge: PR is 0.00321881 vs Naive is 2
+Queen's_Park: PR is 0.00314267 vs Naive is 2
+Queensbury: PR is 0.00315802 vs Naive is 2
+Queensway: PR is 0.00262882 vs Naive is 2
+Ravenscourt_Park: PR is 0.00270219 vs Naive is 2
+Rayners_Lane: PR is 0.00457977 vs Naive is 3
+Redbridge: PR is 0.00308093 vs Naive is 2
+Regent's_Park: PR is 0.00236268 vs Naive is 2
+Richmond: PR is 0.00163976 vs Naive is 1
+Rickmansworth: PR is 0.00337742 vs Naive is 2
+Roding_Valley: PR is 0.00314204 vs Naive is 2
+Rotherhithe: PR is 0.00264113 vs Naive is 2
+Royal_Albert: PR is 0.00325788 vs Naive is 2
+Royal_Oak: PR is 0.00275539 vs Naive is 2
+Royal_Victoria: PR is 0.00287348 vs Naive is 2
+Ruislip: PR is 0.00337024 vs Naive is 2
+Ruislip_Gardens: PR is 0.0036095 vs Naive is 2
+Ruislip_Manor: PR is 0.00327224 vs Naive is 2
+Russell_Square: PR is 0.00242962 vs Naive is 2
+Seven_Sisters: PR is 0.0030025 vs Naive is 2
+Shadwell: PR is 0.00615711 vs Naive is 5
+Shepherd's_Bush_(C): PR is 0.00287565 vs Naive is 2
+Shepherd's_Bush_(H): PR is 0.00285868 vs Naive is 2
+Shoreditch: PR is 0.00135146 vs Naive is 1
+Sloane_Square: PR is 0.00245834 vs Naive is 2
+Snaresbrook: PR is 0.00298653 vs Naive is 2
+Southfields: PR is 0.00344125 vs Naive is 2
+Southgate: PR is 0.0034876 vs Naive is 2
+Southwark: PR is 0.00237892 vs Naive is 2
+South_Ealing: PR is 0.00286415 vs Naive is 2
+South_Harrow: PR is 0.00309259 vs Naive is 2
+South_Kensington: PR is 0.00369397 vs Naive is 3
+South_Kenton: PR is 0.00356298 vs Naive is 2
+South_Quay: PR is 0.00297636 vs Naive is 2
+South_Ruislip: PR is 0.00349025 vs Naive is 2
+South_Wimbledon: PR is 0.00362329 vs Naive is 2
+South_Woodford: PR is 0.00305113 vs Naive is 2
+Stamford_Brook: PR is 0.00271511 vs Naive is 2
+Stanmore: PR is 0.00174348 vs Naive is 1
+Stepney_Green: PR is 0.00255395 vs Naive is 2
+Stockwell: PR is 0.0054275 vs Naive is 4
+Stonebridge_Park: PR is 0.00336046 vs Naive is 2
+Stratford: PR is 0.00524704 vs Naive is 4
+St._James's_Park: PR is 0.00236077 vs Naive is 2
+St._John's_Wood: PR is 0.00254295 vs Naive is 2
+St._Paul's: PR is 0.00241018 vs Naive is 2
+Sudbury_Hill: PR is 0.00310898 vs Naive is 2
+Sudbury_Town: PR is 0.00310407 vs Naive is 2
+Surrey_Quays: PR is 0.00433174 vs Naive is 3
+Swiss_Cottage: PR is 0.00259792 vs Naive is 2
+Temple: PR is 0.00250471 vs Naive is 2
+Theydon_Bois: PR is 0.00356289 vs Naive is 2
+Tooting_Bec: PR is 0.00332332 vs Naive is 2
+Tooting_Broadway: PR is 0.00340957 vs Naive is 2
+Tottenham_Court_Road: PR is 0.00448165 vs Naive is 4
+Tottenham_Hale: PR is 0.00317779 vs Naive is 2
+Totteridge_&_Whetstone: PR is 0.00362653 vs Naive is 2
+Tower_Gateway: PR is 0.00133541 vs Naive is 1
+Tower_Hill: PR is 0.00375833 vs Naive is 3
+Tufnell_Park: PR is 0.00297118 vs Naive is 2
+Turnham_Green: PR is 0.00666318 vs Naive is 5
+Turnpike_Lane: PR is 0.00309153 vs Naive is 2
+Upminster: PR is 0.00190686 vs Naive is 1
+Upminster_Bridge: PR is 0.00366589 vs Naive is 2
+Upney: PR is 0.00323186 vs Naive is 2
+Upton_Park: PR is 0.00298058 vs Naive is 2
+Uxbridge: PR is 0.00187358 vs Naive is 1
+Vauxhall: PR is 0.00266882 vs Naive is 2
+Victoria: PR is 0.0047285 vs Naive is 4
+Walthamstow_Central: PR is 0.00175161 vs Naive is 1
+Wanstead: PR is 0.00300068 vs Naive is 2
+Wapping: PR is 0.00258995 vs Naive is 2
+Warren_Street: PR is 0.00349285 vs Naive is 3
+Warwick_Avenue: PR is 0.00280292 vs Naive is 2
+Waterloo: PR is 0.00683724 vs Naive is 6
+Watford: PR is 0.00180386 vs Naive is 1
+Wembley_Central: PR is 0.00341478 vs Naive is 2
+Wembley_Park: PR is 0.00552572 vs Naive is 4
+Westbourne_Park: PR is 0.00285027 vs Naive is 2
+Westferry: PR is 0.00380675 vs Naive is 3
+Westminster: PR is 0.00451449 vs Naive is 4
+West_Acton: PR is 0.00296146 vs Naive is 2
+West_Brompton: PR is 0.00277668 vs Naive is 2
+West_Finchley: PR is 0.00341422 vs Naive is 2
+West_Ham: PR is 0.00530412 vs Naive is 4
+West_Hampstead: PR is 0.00273749 vs Naive is 2
+West_Harrow: PR is 0.00303035 vs Naive is 2
+West_India_Quay: PR is 0.00383524 vs Naive is 3
+West_Kensington: PR is 0.00259168 vs Naive is 2
+West_Ruislip: PR is 0.00188008 vs Naive is 1
+Whitechapel: PR is 0.00499326 vs Naive is 4
+White_City: PR is 0.00294524 vs Naive is 2
+Willesden_Green: PR is 0.0028861 vs Naive is 2
+Willesden_Junction: PR is 0.00326217 vs Naive is 2
+Wimbledon: PR is 0.00185993 vs Naive is 1
+Wimbledon_Park: PR is 0.00356709 vs Naive is 2
+Woodford: PR is 0.00463254 vs Naive is 3
+Woodside_Park: PR is 0.00350992 vs Naive is 2
+Wood_Green: PR is 0.00319841 vs Naive is 2
+TOP20 pagerank
+1. King's_Cross_St._Pancras PR is 0.0085801
+2. Baker_Street PR is 0.00842487
+3. Earl's_Court PR is 0.00762204
+4. Bank PR is 0.00694648
+5. Waterloo PR is 0.00683724
+6. Green_Park PR is 0.00669239
+7. Turnham_Green PR is 0.00666318
+8. Oxford_Circus PR is 0.00665521
+9. Paddington PR is 0.006505
+10. Shadwell PR is 0.00615711
+11. Liverpool_Street PR is 0.0059167
+12. Finsbury_Park PR is 0.00558939
+13. Wembley_Park PR is 0.00552572
+14. Stockwell PR is 0.0054275
+15. Acton_Town PR is 0.00542588
+16. Canning_Town PR is 0.00534741
+17. Chalfont_&_Latimer PR is 0.00532761
+18. West_Ham PR is 0.00530412
+19. Hammersmith PR is 0.00525033
+20. Stratford PR is 0.00524704
+TOP20 naive
+1. King's_Cross_St._Pancras PR is 7
+2. Baker_Street PR is 7
+3. Waterloo PR is 6
+4. Oxford_Circus PR is 6
+5. Green_Park PR is 6
+6. Earl's_Court PR is 6
+7. Bank PR is 6
+8. Turnham_Green PR is 5
+9. Shadwell PR is 5
+10. Paddington PR is 5
+11. Liverpool_Street PR is 5
+12. Whitechapel PR is 4
+13. Westminster PR is 4
+14. West_Ham PR is 4
+15. Wembley_Park PR is 4
+16. Victoria PR is 4
+17. Tottenham_Court_Road PR is 4
+18. Stratford PR is 4
+19. Stockwell PR is 4
+20. Poplar PR is 4
